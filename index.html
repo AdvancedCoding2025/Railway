@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Railway Seat Reservation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Railway Seat Reservation</h1>
+    <div class="subtitle">Modern • Minimal • Inspired by BookMyShow</div>
+  </header>
+
+  <main>
+    <!-- Input Section -->
+    <section class="booking-form">
+      <div class="form-group">
+        <label for="passenger-name">Passenger Name</label>
+        <input type="text" id="passenger-name" placeholder="Enter passenger name" />
+      </div>
+      
+      <div class="form-group">
+        <label for="num-people">Number of People</label>
+        <input type="number" id="num-people" min="1" max="6" value="1" />
+      </div>
+      
+      <div class="form-group">
+        <label for="coach-class">Coach/Class</label>
+        <select id="coach-class">
+          <option value="chair-car">Chair Car (3+2)</option>
+          <option value="2s">Second Seating 2S (3+3 benches)</option>
+          <option value="2a">AC 2-Tier (2A)</option>
+          <option value="3a">AC 3-Tier (3A / Sleeper layout)</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Legend -->
+    <section class="info-bar">
+      <div class="legend-item">
+        <span class="legend available"></span> Available
+      </div>
+      <div class="legend-item">
+        <span class="legend booked"></span> Booked
+      </div>
+      <div class="legend-item">
+        <span class="legend selected"></span> Selected
+      </div>
+    </section>
+
+    <!-- Seat Map -->
+    <section class="booking-area">
+      <div class="train-direction">
+        <span class="direction-label">← Engine</span>
+        <span class="direction-label">Guard →</span>
+      </div>
+      <div id="seat-map" class="seat-map"></div>
+    </section>
+
+    <!-- Live Counter -->
+    <section class="counter">
+      <div id="selection-counter">Selected 0 / 1</div>
+    </section>
+
+    <!-- Summary Panel -->
+    <section class="summary-panel">
+      <h3>Booking Summary</h3>
+      <div class="summary-content">
+        <div class="summary-item">
+          <span class="label">Passenger:</span>
+          <span id="summary-name">-</span>
+        </div>
+        <div class="summary-item">
+          <span class="label">Coach Class:</span>
+          <span id="summary-class">Chair Car (3+2)</span>
+        </div>
+        <div class="summary-item">
+          <span class="label">Selected Seats:</span>
+          <div id="summary-seats">None selected</div>
+        </div>
+      </div>
+      
+      <div class="action-buttons">
+        <button id="clear-btn" class="secondary-btn">Clear</button>
+        <button id="confirm-btn" class="primary-btn">Confirm Booking</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>&copy; 2025 Railway UI Demo</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
